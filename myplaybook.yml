@@ -1,0 +1,8 @@
+---
+- hosts: all
+  tasks: 
+    - name: git log
+      command: git log
+      register: log
+
+    - debug: msg="{{ log.stdout_lines }}"
